@@ -354,3 +354,55 @@ full cape sandbox report: [here](<evidence/reports/Sample_2_VT_CAPE Sandbox.html
 ## Sample 2 Suammary
 
 The analyzed sample represents a highly sophisticated, multi-stage malicious file (likely a weaponized document) designed to achieve system compromise via advanced memory corruption and code execution techniques. The execution profile reveals clear indicators of automated exploit delivery, defense evasion, and post-exploitation staging within a Windows 10 environment. The combination of memory manipulation, execution flow hijacking, and external communication classifies this sample as a critical-risk threat capable of unauthorized remote code execution. Immediate containment, endpoint isolation, forensic RAM analysis, and robust defense-in-depth hardening (such as Attack Surface Reduction rules and strict macro policies) are strongly recommended. Based on all these it is concluded that this is a phishing mail.
+
+## VERDICT
+## Sample 1 — Bradesco/Livelo Points-Expiration Email
+
+**Verdict: MALICIOUS — PHISHING**
+
+**Confidence: High**
+
+**Rationale:** The email uses an urgent points-expiration notification associated with the Bradesco/Livelo brands to pressure the recipient into taking action. The sender infrastructure raises additional concerns, including a return-path mismatch and inconclusive SPF and DMARC authentication results. Threat-intelligence reporting also associates a similar email with phishing activity.
+
+
+**Conclusion:**
+
+> The email is assessed as malicious and consistent with a phishing attempt. The urgency-based points-expiration lure, suspicious sender infrastructure, and associated threat-intelligence findings support this assessment. Although the initial VirusTotal scan returned no detections, this result does not establish legitimacy. The email should be treated as malicious, with further investigation focused on validating the associated indicators and determining whether any recipients were affected.
+
+---
+
+## Sample 2 — Credit-Related Email with Gmail Sender
+
+**Verdict: LIKELY MALICIOUS — PHISHING / MALICIOUS ATTACHMENT SUSPECTED**
+
+**Confidence: Moderate to High, pending artifact verification**
+
+**Rationale:** The email passed SPF, DKIM, and DMARC authentication checks, but these results establish aspects of sender authentication—not whether the message content is safe. The VirusTotal findings documented in my report include multiple detections associated with a potentially malicious PDF or phishing activity.
+
+
+**Conclusion:**
+
+> The email is assessed as likely malicious, with suspected phishing activity involving a potentially malicious PDF attachment. Although SPF, DKIM, and DMARC authentication checks passed, these results do not establish the legitimacy of the message or its contents. Threat-intelligence findings raise concerns about the associated attachment. A definitive conclusion should be based on verifying the attachment's identity, correlating the reported detections with its hash, and reviewing the available behavioral evidence.
+
+---
+
+## Final Verdict Summary
+
+| Attribute            | Sample 1                                                                                    | Sample 2                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Verdict              | **Malicious — Phishing**                                                                    | **Likely malicious — Phishing / suspected malicious attachment**              |
+| Confidence           | High                                                                                        | Moderate to high, pending artifact verification                               |
+| Primary indicators   | Urgency-based lure, suspicious sender infrastructure, related threat-intelligence reporting | Threat-intelligence detections associated with a potentially malicious PDF    |
+| Email authentication | SPF and DMARC returned `temperror`; DKIM absent                                             | SPF, DKIM, and DMARC passed                                                   |
+| VirusTotal result    | 0/61 detections                                                                             | Multiple detections reported for the relevant artifact                        |
+| Key limitation       | Confirm the external report's connection to this exact email                                | Confirm whether the detections concern the original email or its attachment   |
+| Recommended handling | Treat as malicious and investigate exposure                                                 | Quarantine pending artifact verification; handle the attachment as suspicious |
+
+### Important distinction for your report
+
+For Sample 1, the evidence supports a phishing verdict, but you should document the connection between the threat-intelligence report and the exact email.
+
+For Sample 2, **do not equate a malicious attachment verdict with proof that the email itself executed malware**. Keep the email assessment, attachment assessment, and observed sandbox behavior as separate findings.
+
+This distinction will make your incident reports more defensible and demonstrate that your conclusions are based on evidence rather than on security-tool labels alone.
+
