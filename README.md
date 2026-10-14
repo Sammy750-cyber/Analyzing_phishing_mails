@@ -397,12 +397,3 @@ The analyzed sample represents a highly sophisticated, multi-stage malicious fil
 | VirusTotal result    | 0/61 detections                                                                             | Multiple detections reported for the relevant artifact                        |
 | Key limitation       | Confirm the external report's connection to this exact email                                | Confirm whether the detections concern the original email or its attachment   |
 | Recommended handling | Treat as malicious and investigate exposure                                                 | Quarantine pending artifact verification; handle the attachment as suspicious |
-
-### Important distinction for your report
-
-For Sample 1, the evidence supports a phishing verdict, but you should document the connection between the threat-intelligence report and the exact email.
-
-For Sample 2, **do not equate a malicious attachment verdict with proof that the email itself executed malware**. Keep the email assessment, attachment assessment, and observed sandbox behavior as separate findings.
-
-This distinction will make your incident reports more defensible and demonstrate that your conclusions are based on evidence rather than on security-tool labels alone.
-
