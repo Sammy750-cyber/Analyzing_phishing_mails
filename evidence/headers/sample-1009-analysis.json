@@ -1,0 +1,54 @@
+{
+  "file": "sample-1009.eml",
+  "file_sha256": "688d5eb7429d8fc5c529f60872d855e79562ad9f06db924d536b31e21e7b22f8",
+  "headers": {
+    "From": [
+      "\"[BB] - Comunicado ao cliente - Cod.  3391350884491727\" <sel553r@gmail.com>"
+    ],
+    "To": [
+      "phishing@pot"
+    ],
+    "Return-Path": [
+      "sel553r@gmail.com"
+    ],
+    "Subject": [
+      "Crédito IR Liberado - v5V0ZVRe1HjazliqQoYz"
+    ],
+    "Date": [
+      "Sat, 29 Jul 2023 18:08:24 +0000"
+    ],
+    "Message-ID": [
+      "<d21e5a021950b9fdf1aab7fa0c059612@gmail.com>"
+    ],
+    "Authentication-Results": [
+      "spf=pass (sender IP is 209.85.222.173) smtp.mailfrom=gmail.com; dkim=pass (signature was verified) header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass reason=100"
+    ],
+    "Received-SPF": [
+      "Pass (protection.outlook.com: domain of gmail.com designates 209.85.222.173 as permitted sender) receiver=protection.outlook.com; client-ip=209.85.222.173; helo=mail-qk1-f173.google.com; pr=C"
+    ]
+  },
+  "received_header_count": 6,
+  "received_headers": [
+    "from PH7PR19MB5487.namprd19.prod.outlook.com (2603:10b6:510:13a::13) by MN0PR19MB6312.namprd19.prod.outlook.com with HTTPS; Sat, 29 Jul 2023 18:08:29 +0000",
+    "from BN9PR03CA0616.namprd03.prod.outlook.com (2603:10b6:408:106::21) by PH7PR19MB5487.namprd19.prod.outlook.com (2603:10b6:510:13a::13) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6631.29; Sat, 29 Jul 2023 18:08:28 +0000",
+    "from BN1NAM02FT009.eop-nam02.prod.protection.outlook.com (2603:10b6:408:106:cafe::5e) by BN9PR03CA0616.outlook.office365.com (2603:10b6:408:106::21) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6631.41 via Frontend Transport; Sat, 29 Jul 2023 18:08:27 +0000",
+    "from mail-qk1-f173.google.com (209.85.222.173) by BN1NAM02FT009.mail.protection.outlook.com (10.13.2.127) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6631.39 via Frontend Transport; Sat, 29 Jul 2023 18:08:27 +0000",
+    "by mail-qk1-f173.google.com with SMTP id af79cd13be357-765a7768f1dso275191385a.0        for <phishing@pot>; Sat, 29 Jul 2023 11:08:27 -0700 (PDT)",
+    "from c3.domain ([20.161.8.184])        by smtp.gmail.com with ESMTPSA id d11-20020a05620a140b00b00767291640e8sm1994518qkj.90.2023.07.29.11.08.26        for <phishing@pot>        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Sat, 29 Jul 2023 11:08:26 -0700 (PDT)"
+  ],
+  "dkim_signature_count": 1,
+  "attachments": [
+    {
+      "filename": "U1vn48GmdQr.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 99717,
+      "sha256": "831b3c4cfe0ff181e09a584d180d4ff5b9963a1e7be5e25d6b857ad63713d024"
+    }
+  ],
+  "analysis_limitations": [
+    "Header extraction does not validate SPF, DKIM, or DMARC.",
+    "Header values can be forged.",
+    "Attachment hashes identify files but do not determine whether they are malicious.",
+    "No URLs are visited and no attachments are executed."
+  ]
+}

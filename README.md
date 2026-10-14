@@ -29,6 +29,8 @@ The sample i used in this lab were sourced for and said to be potential phishing
 
 ## Analysis
 
+**Full header analysis here**: [Here](evidence/reports/sample-1-header-analysis.md)
+
 The mail subject which says `CLIENTE PRIME - BRADESCO LIVELO: Seu cartão tem 92.990 pontos LIVELO expirando hoje!`
 is a portuguese text that roughly transkates to
  `"PRIME CUSTOMER - BRADESCO LIVELO: Your card has 92,990 LIVELO points expiring today!"`. The first key thing i could point at is `expiring today` this is a common social engineering technique, Urgency is commonly used in phishing to encourage recipients to act without carefully examining a message.
@@ -84,6 +86,15 @@ Based on the findings and evidence presented, i will label this a phishing mail.
 | Number of Received headers |    15   |
 | Return-Path | sel553r@gmail.com |
 |Sender IP | 209.85.222.173 |
+
+**Full header analysis here**: [Here](evidence/reports/sample-1009-header-analysis.md)
+
+![alt text](evidence/screenshots/sample2_VT_overview1.png)
+
+According to the header, there is a pdf attached to this, the mail itself appears legit but the attached document is malicious.
+>**VirusTotal AI overview:** This document is a phishing lure impersonating the financial institution Banco do Brasil. While the internal technical analysis indicates that the PDF lacks automated execution triggers, JavaScript, or malicious code paths, the visual layer is explicitly designed for social engineering. The document uses official branding and a legitimate tax ID to offer a fake refund of R$ 4,593.21, creating a false sense of urgency and authenticity to deceive the recipient.
+The primary threat is contained in a prominent call-to-action button labeled "CLIQUE AQUI," which serves as a hyperlink to an external URI. Although the file does not exploit vulnerabilities in the PDF reader itself, its content is optimized for credential harvesting or redirecting users to a malicious site. The use of a full-page image and a random tracking string are common tactics employed to bypass traditional text-based security filters.
+
 
 
 ### VirusToal Analysis
